@@ -3,67 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criterio de la Raíz - Cálculo Integral</title>
+    <title>Criterio de la Raíz - UTP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="slide bienvenida">
-        <div class="content">
+    <header class="main-header">
+        <div class="header-overlay"></div>
+        <div class="header-container">
+            <div class="badge-utp">Universidad Tecnológica de Pereira</div>
             <h1>Criterio de la Raíz</h1>
-            <p class="subtitle">Análisis de Series Infinitas</p>
-            <div class="badge">Cálculo Integral</div>
-            <p class="scroll-warning">Desliza hacia abajo para empezar ↓</p>
-        </div>
-    </section>
-
-    <section class="slide teoria">
-        <div class="content">
-            <h2>La Fórmula Central</h2>
-            <p>Usamos este criterio cuando los términos de la serie están elevados a la potencia <b>n</b>. Aplicamos el límite:</p>
+            <p class="subtitle">Análisis de Convergencia en Series Infinitas</p>
             
-            <div class="formula-box">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Asignatura:</span>
+                    <strong>Cálculo Integral - Grupo 29</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Expositores:</span>
+                    <strong>Jorge Andrés Ceballos Cruz<br>Yohann Andrey Pineda</strong>
+                </div>
+            </div>
+            <div class="scroll-indicator">Comenzar Navegación ↓</div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="dash-card animation-fade">
+            <div class="card-header">
+                <span class="icon">💡</span>
+                <h2>¿Cuándo se activa este criterio?</h2>
+            </div>
+            <p>Es la herramienta definitiva en cálculo cuando nos enfrentamos a series cuyo término general $a_n$ se encuentra totalmente afectado por un exponente variable. Su objetivo es neutralizar la potencia enésima mediante una raíz del mismo grado.</p>
+        </section>
+
+        <section class="dash-card formula-section">
+            <div class="card-header">
+                <span class="icon">⚡</span>
+                <h2>Definición Formal</h2>
+            </div>
+            <p>Planteamos el límite al infinito de la raíz enésima del valor absoluto del término:</p>
+            <div class="math-display">
                 L = lim <span>(n → ∞)</span> <sup>n</sup>√|a<sub>n</sub>|
             </div>
-            
-            <p class="Nota">💡 El valor absoluto asegura que trabajemos con convergencia absoluta.</p>
-        </div>
-    </section>
+            <div class="alert-box">
+                <strong>Nota de Rigor Académico:</strong> El uso del valor absoluto $|a_n|$ es obligatorio. Esto garantiza evaluar la <em>convergencia absoluta</em> y evita indeterminaciones con raíces pares de números negativos.
+            </div>
+        </section>
 
-    <section class="slide reglas">
-        <div class="content">
-            <h2>Las 3 Reglas de Oro</h2>
-            <div class="cards-container">
-                <div class="card verde">
-                    <h3>L &lt; 1</h3>
-                    <p>La serie <b>CONVERGE</b> absolutamente.</p>
+        <section class="dash-card">
+            <div class="card-header">
+                <span class="icon">📊</span>
+                <h2>Los 3 Escenarios Post-Límite</h2>
+            </div>
+            <div class="rules-grid">
+                <div class="rule-card status-converge">
+                    <div class="rule-val">L &lt; 1</div>
+                    <h4>Convergencia Absoluta</h4>
+                    <p>La serie suma un valor real finito.</p>
                 </div>
-                <div class="card roja">
-                    <h3>L &gt; 1</h3>
-                    <p>La serie <b>DIVERGE</b> (o L = ∞).</p>
+                <div class="rule-card status-diverge">
+                    <div class="rule-val">L &gt; 1</div>
+                    <h4>Divergencia</h4>
+                    <p>La serie crece infinitamente o se desestabiliza.</p>
                 </div>
-                <div class="card gris">
-                    <h3>L = 1</h3>
-                    <p>El criterio <b>INCONCLUYENTE</b> (usa otro método).</p>
+                <div class="rule-card status-fail">
+                    <div class="rule-val">L = 1</div>
+                    <h4>Inconcluyente</h4>
+                    <p>El test falla. Se requiere otro criterio analítico.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="slide taller">
-        <div class="content">
-            <h2>¡Pon a prueba al salón!</h2>
-            <p>¿Qué pasa con la serie donde el límite da <b>L = 2/3</b>?</p>
-            
-            <div class="quiz-container">
-                <button class="btn-quiz" onclick="evaluarRespuesta('correcto')">A) Converge absolutamente</button>
-                <button class="btn-quiz" onclick="evaluarRespuesta('incorrecto')">B) Diverge</button>
-                <button class="btn-quiz" onclick="evaluarRespuesta('incorrecto')">C) Inconcluyente</button>
+        <section class="dash-card workshop-section">
+            <div class="card-header">
+                <span class="icon">🧠</span>
+                <h2>Módulo Interactivo: Ejercicios Propuestos</h2>
             </div>
+            <p class="workshop-intro">Material de refuerzo interactivo diseñado para el salón de clase. Resuelve en tu cuaderno y comprueba la lógica del algoritmo.</p>
 
-            <div id="resultado-taller" class="resultado-oculto"></div>
-        </div>
-    </section>
+            <div class="exercises-stack">
+                <div class="exercise-item" id="ex-block-1">
+                    <div class="ex-meta">Ejercicio 01 • Nivel Básico</div>
+                    <h3>∑<sub>(n=1 → ∞)</sub> (4n + 1 / 2n + 5)<sup>n</sup></h3>
+                    <div class="btn-group">
+                        <button class="btn-choice" onclick="verificarEjercicio(1, 'A', 'incorrecto')">A) Converge absolutamente</button>
+                        <button class="btn-choice" onclick="verificarEjercicio(1, 'B', 'correcto')">B) Diverge por completo</button>
+                    </div>
+                    <div id="feedback-1" class="feedback-msg"></div>
+                </div>
+
+                <div class="exercise-item" id="ex-block-2">
+                    <div class="ex-meta">Ejercicio 02 • Nivel Medio</div>
+                    <h3>∑<sub>(n=1 → ∞)</sub> (3 / n)<sup>n</sup></h3>
+                    <div class="btn-group">
+                        <button class="btn-choice" onclick="verificarEjercicio(2, 'A', 'correcto')">A) Converge absolutamente</button>
+                        <button class="btn-choice" onclick="verificarEjercicio(2, 'B', 'incorrecto')">B) Diverge de forma lineal</button>
+                    </div>
+                    <div id="feedback-2" class="feedback-msg"></div>
+                </div>
+
+                <div class="exercise-item" id="ex-block-3">
+                    <div class="ex-meta">Ejercicio 03 • Nivel Avanzado / Reto</div>
+                    <h3>∑<sub>(n=1 → ∞)</sub> (n / 2n + 1)<sup>3n</sup></h3>
+                    <div class="btn-group">
+                        <button class="btn-choice" onclick="verificarEjercicio(3, 'A', 'correcto')">A) Converge (L = 1/8)</button>
+                        <button class="btn-choice" onclick="verificarEjercicio(3, 'B', 'incorrecto')">B) Diverge (L = 3/2)</button>
+                    </div>
+                    <div id="feedback-3" class="feedback-msg"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-utp">
+        <p>© 2026 - Universidad Tecnológica de Pereira • Facultad de Ciencias Básicas</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
