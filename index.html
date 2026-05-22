@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criterio de la Raíz - Cálculo Integral</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="slide bienvenida">
+        <div class="content">
+            <h1>Criterio de la Raíz</h1>
+            <p class="subtitle">Análisis de Series Infinitas</p>
+            <div class="badge">Cálculo Integral</div>
+            <p class="scroll-warning">Desliza hacia abajo para empezar ↓</p>
+        </div>
+    </section>
+
+    <section class="slide teoria">
+        <div class="content">
+            <h2>La Fórmula Central</h2>
+            <p>Usamos este criterio cuando los términos de la serie están elevados a la potencia <b>n</b>. Aplicamos el límite:</p>
+            
+            <div class="formula-box">
+                L = lim <span>(n → ∞)</span> <sup>n</sup>√|a<sub>n</sub>|
+            </div>
+            
+            <p class="Nota">💡 El valor absoluto asegura que trabajemos con convergencia absoluta.</p>
+        </div>
+    </section>
+
+    <section class="slide reglas">
+        <div class="content">
+            <h2>Las 3 Reglas de Oro</h2>
+            <div class="cards-container">
+                <div class="card verde">
+                    <h3>L &lt; 1</h3>
+                    <p>La serie <b>CONVERGE</b> absolutamente.</p>
+                </div>
+                <div class="card roja">
+                    <h3>L &gt; 1</h3>
+                    <p>La serie <b>DIVERGE</b> (o L = ∞).</p>
+                </div>
+                <div class="card gris">
+                    <h3>L = 1</h3>
+                    <p>El criterio <b>INCONCLUYENTE</b> (usa otro método).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide taller">
+        <div class="content">
+            <h2>¡Pon a prueba al salón!</h2>
+            <p>¿Qué pasa con la serie donde el límite da <b>L = 2/3</b>?</p>
+            
+            <div class="quiz-container">
+                <button class="btn-quiz" onclick="evaluarRespuesta('correcto')">A) Converge absolutamente</button>
+                <button class="btn-quiz" onclick="evaluarRespuesta('incorrecto')">B) Diverge</button>
+                <button class="btn-quiz" onclick="evaluarRespuesta('incorrecto')">C) Inconcluyente</button>
+            </div>
+
+            <div id="resultado-taller" class="resultado-oculto"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
