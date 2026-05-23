@@ -1,27 +1,27 @@
 /**
- * LÓGICA DE VALIDACIÓN INTERACTIVA DEL TALLER
- * Diseñado para procesar respuestas de forma dinámica sin recargar la app.
+ * SISTEMA INTERACTIVO DE EVALUACIÓN EDITORIAL
+ * Valida respuestas algebraicas de límites al infinito para la cátedra de Cálculo Integral.
  */
-function verificarEjercicio(idEjercicio, opcionSeleccionada, dictamen) {
-    // Apuntar al contenedor de texto de retroalimentación específico
-    const feedbackBox = document.getElementById(`feedback-${idEjercicio}`);
+function checkEx(idEjercicio, opcion, esCorrecto) {
+    // Apuntar dinámicamente al bloque de respuesta del ejercicio actual
+    const feedbackBlock = document.getElementById('feed-' + idEjercicio);
     
-    // Limpiar configuraciones y estilos visuales previos
-    feedbackBox.className = "feedback-msg";
+    // Resetear las clases de visibilidad
+    feedbackBlock.className = "feedback-editorial";
     
-    if (dictamen === 'correcto') {
-        feedbackBox.classList.add('success-ui');
+    if (esCorrecto) {
+        feedbackBlock.classList.add('show-success');
         
-        // Mensajes analíticos personalizados por ejercicio
+        // Retroalimentación detallada y formal según el ejercicio seleccionado
         if (idEjercicio === 1) {
-            feedbackBox.innerHTML = `<strong>¡EXCELENTE! (Opción ${opcionSeleccionada})</strong><br>Al simplificar la raíz enésima, evaluamos el límite al infinito de (4n+1)/(2n+5), lo cual da L = 4/2 = 2. Como L > 1, la serie diverge analíticamente de forma correcta.`;
+            feedbackBlock.innerHTML = `<b>¡Análisis Correcto! (Opción ${opcion})</b><br>Al aplicar la raíz enésima se anula la potencia exterior, resultando en el lim((4n+1)/(2n+5)) = 4/2 = 2. Dado que el límite L = 2 es estrictamente mayor que 1 (L > 1), la serie diverge según el teorema de Cauchy.`;
         } else if (idEjercicio === 2) {
-            feedbackBox.innerHTML = `<strong>¡RESPUESTA CORRECTA! (Opción ${opcionSeleccionada})</strong><br>Excelente análisis. Al aplicar la raíz, el límite resulta en lim(3/n) cuando n tiende a infinito, lo que es igual a 0. Como L = 0 < 1, la serie converge absolutamente.`;
+            feedbackBlock.innerHTML = `<b>¡Excelente Deducción! (Opción ${opcion})</b><br>La raíz enésima cancela la potencia n, dejándonos el lim(3/n) cuando n tiende a infinito. Al evaluar la división de una constante por un número infinitamente grande, el valor tiende a L = 0. Como 0 < 1, la serie converge absolutamente.`;
         } else if (idEjercicio === 3) {
-            feedbackBox.innerHTML = `<strong>¡BRILLANTE, LOGRASTE EL RETO! (Opción ${opcionSeleccionada})</strong><br>Nivel UTP. La potencia es 3n, así que al aplicar la raíz queda lim((n/(2n+1))³). Al resolver el límite interno da 1/2, y elevado al cubo da L = 1/8. Al ser menor que 1, la serie converge de forma absoluta.`;
+            feedbackBlock.innerHTML = `<b>¡Magnífico! Logró superar el reto formal (Opción ${opcion})</b><br>La potencia original del término es 3n. Al aplicar la raíz enésima nos queda el límite interno afectado por el cubo remanente: (lim(n/(2n+1)))³. El límite de la base es igual a 1/2, y al elevarlo al cubo obtenemos L = 1/8. Como 1/8 < 1, la serie converge de forma absoluta.`;
         }
     } else {
-        feedbackBox.classList.add('error-ui');
-        feedbackBox.innerHTML = `<strong>RESPUESTA INCORRECTA (Opción ${opcionSeleccionada})</strong><br>El análisis matemático no coincide. Recuerda aplicar la raíz enésima para anular el exponente externo y compara el valor del límite final firmemente con el 1. ¡Vuelve a intentarlo!`;
+        feedbackBlock.classList.add('show-danger');
+        feedbackBlock.innerHTML = `<b>Respuesta Incorrecta (Opción ${opcion})</b><br>El valor analítico o la ley de decisión aplicada no corresponde al ejercicio. Recuerde resolver primero la simplificación de los exponentes y evaluar con rigor el límite resultante frente a la constante 1. ¡Inténtelo nuevamente!`;
     }
 }
