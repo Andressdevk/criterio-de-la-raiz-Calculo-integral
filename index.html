@@ -3,122 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criterio de la Raíz - UTP</title>
+    <title>Criterio de la Raíz • UTP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-overlay"></div>
-        <div class="header-container">
-            <div class="badge-utp">Universidad Tecnológica de Pereira</div>
-            <h1>Criterio de la Raíz</h1>
-            <p class="subtitle">Análisis de Convergencia en Series Infinitas</p>
-            
-            <div class="meta-grid">
-                <div class="meta-item">
-                    <span>Asignatura:</span>
-                    <strong>Cálculo Integral - Grupo 29</strong>
-                </div>
-                <div class="meta-item">
-                    <span>Expositores:</span>
-                    <strong>Jorge Andrés Ceballos Cruz<br>Yohann Andrey Pineda</strong>
-                </div>
+    <header class="academic-cover">
+        <div class="institution">Universidad Tecnológica de Pereira</div>
+        <h1>El Criterio de la Raíz</h1>
+        <div class="subtitle">Un estudio formal sobre la convergencia absoluta de series infinitas</div>
+        
+        <div class="academic-meta">
+            <div class="meta-col">
+                <span>Cátedra e Instructivo</span>
+                <strong>Cálculo Integral • Grupo 29</strong>
             </div>
-            <div class="scroll-indicator">Comenzar Navegación ↓</div>
+            <div class="meta-col">
+                <span>Investigadores / Expositores</span>
+                <strong>Jorge Andrés Ceballos Cruz<br>Yohann Andrey Pineda</strong>
+            </div>
         </div>
     </header>
 
-    <main class="dashboard-container">
-        <section class="dash-card animation-fade">
-            <div class="card-header">
-                <span class="icon">💡</span>
-                <h2>¿Cuándo se activa este criterio?</h2>
-            </div>
-            <p>Es la herramienta definitiva en cálculo cuando nos enfrentamos a series cuyo término general $a_n$ se encuentra totalmente afectado por un exponente variable. Su objetivo es neutralizar la potencia enésima mediante una raíz del mismo grado.</p>
-        </section>
+    <main class="content-container">
 
-        <section class="dash-card formula-section">
-            <div class="card-header">
-                <span class="icon">⚡</span>
-                <h2>Definición Formal</h2>
-            </div>
-            <p>Planteamos el límite al infinito de la raíz enésima del valor absoluto del término:</p>
-            <div class="math-display">
-                L = lim <span>(n → ∞)</span> <sup>n</sup>√|a<sub>n</sub>|
-            </div>
-            <div class="alert-box">
-                <strong>Nota de Rigor Académico:</strong> El uso del valor absoluto $|a_n|$ es obligatorio. Esto garantiza evaluar la <em>convergencia absoluta</em> y evita indeterminaciones con raíces pares de números negativos.
-            </div>
-        </section>
-
-        <section class="dash-card">
-            <div class="card-header">
-                <span class="icon">📊</span>
-                <h2>Los 3 Escenarios Post-Límite</h2>
-            </div>
-            <div class="rules-grid">
-                <div class="rule-card status-converge">
-                    <div class="rule-val">L &lt; 1</div>
-                    <h4>Convergencia Absoluta</h4>
-                    <p>La serie suma un valor real finito.</p>
+        <section class="section-block">
+            <h2>1. Contexto Histórico y Origen</h2>
+            <div class="history-layout">
+                <div class="history-text">
+                    <p>El desarrollo formal del cálculo de series infinitas alcanzó su madurez rigurosa durante el siglo XIX. El <strong>Criterio de la Raíz</strong>, conocido tradicionalmente en los círculos matemáticos avanzados como la <i>Prueba de la Raíz de Cauchy</i>, fue estructurado y demostrado por el célebre matemático francés <strong>Augustin Louis Cauchy</strong> (1789–1857).</p>
+                    <p>Cauchy fue uno de los pioneros en rescatar al cálculo del pragmatismo intuitivo, introduciendo el concepto formal de límite que hoy estudiamos. Publicó este criterio en su obra maestra de 1821, <i>Cours d'Analyse</i>, buscando un método absoluto capaz de desarmar potencias complejas que los criterios de comparación directos de la época no lograban resolver de manera óptima.</p>
                 </div>
-                <div class="rule-card status-diverge">
-                    <div class="rule-val">L &gt; 1</div>
-                    <h4>Divergencia</h4>
-                    <p>La serie crece infinitamente o se desestabiliza.</p>
-                </div>
-                <div class="rule-card status-fail">
-                    <div class="rule-val">L = 1</div>
-                    <h4>Inconcluyente</h4>
-                    <p>El test falla. Se requiere otro criterio analítico.</p>
+                <div class="history-img-frame">
+                    <img src="Louis.png" alt="Augustin Louis Cauchy" class="cauchy-img">
+                    <div class="img-caption">Augustin Louis Cauchy<br>(1789 – 1857)</div>
                 </div>
             </div>
         </section>
 
-        <section class="dash-card workshop-section">
-            <div class="card-header">
-                <span class="icon">🧠</span>
-                <h2>Módulo Interactivo: Ejercicios Propuestos</h2>
+        <section class="section-block">
+            <h2>2. Fundamentos y Conceptos Clave</h2>
+            <p>Antes de abordar el algoritmo operativo del criterio, es indispensable cimentar los conceptos básicos del análisis secuencial en cálculo:</p>
+            
+            <h3>¿Qué es una Sucesión y qué es una Serie?</h3>
+            <p>Una <strong>sucesión</strong> es un conjunto indexado y ordenado de números reales que siguen una regla de asignación fija. Por otro lado, una <strong>serie</strong> es la suma explícita de todos los términos secuenciales de dicha sucesión.</p>
+            
+            <h3>¿Qué es una Serie Infinita?</h3>
+            <p>Es una adición algebraica que se extiende perpetuamente hacia el infinito, matemáticamente denotada bajo el operador sumatorio sigma como:</p>
+            <div class="math-text-box">∑<sub>(n=1 → ∞)</sub> a<sub>n</sub> = a<sub>1</sub> + a<sub>2</sub> + a<sub>3</sub> + ...</div>
+
+            <h3>Tipos de Series Notables</h3>
+            <ul class="concept-list">
+                <li><strong>Series Geométricas:</strong> Cada término se obtiene multiplicando el anterior por una razón constante. Su comportamiento algebraico es la base teórica de la prueba de la raíz.</li>
+                <li><strong>Series p-Series (como la Armónica):</strong> Cruciales en el análisis de convergencia para comparar velocidades de decrecimiento.</li>
+                <li><strong>Series de Potencias:</strong> El escenario principal de la ingeniería donde el criterio de la raíz demuestra su máxima utilidad y agilidad operativa.</li>
+            </ul>
+
+            <h3>Los Conceptos de Convergencia y Divergencia</h3>
+            <ul class="concept-list">
+                <li><strong>Convergencia:</strong> Ocurre cuando, a medida que sumamos infinitos elementos, el resultado acumulado de las sumas parciales se estabiliza y tiende con precisión a un número real fijo y finito.</li>
+                <li><strong>Divergencia:</strong> Se presenta cuando la suma acumulada crece sin límites hacia el infinito ($\infty$), o en su defecto, oscila de forma indeterminada sin establecerse jamás en un valor.</li>
+            </ul>
+        </section>
+
+        <section class="section-block">
+            <h2>3. El Criterio de la Raíz (Teorema Central)</h2>
+            <p>El criterio se activa como un mecanismo infalible cuando el término general $a_n$ de la serie está afectado por completo por un exponente variable $n$. Operativamente, el teorema nos instruye a evaluar el límite al infinito de la raíz enésima:</p>
+            
+            <div class="formula-wrapper">
+                <img src="formula.png" alt="Ecuación formal del Límite de Cauchy" class="formula-img">
             </div>
-            <p class="workshop-intro">Material de refuerzo interactivo diseñado para el salón de clase. Resuelve en tu cuaderno y comprueba la lógica del algoritmo.</p>
 
-            <div class="exercises-stack">
-                <div class="exercise-item" id="ex-block-1">
-                    <div class="ex-meta">Ejercicio 01 • Nivel Básico</div>
-                    <h3>∑<sub>(n=1 → ∞)</sub> (4n + 1 / 2n + 5)<sup>n</sup></h3>
-                    <div class="btn-group">
-                        <button class="btn-choice" onclick="verificarEjercicio(1, 'A', 'incorrecto')">A) Converge absolutamente</button>
-                        <button class="btn-choice" onclick="verificarEjercicio(1, 'B', 'correcto')">B) Diverge por completo</button>
-                    </div>
-                    <div id="feedback-1" class="feedback-msg"></div>
+            <div class="editorial-note">
+                <strong>El Valor Absoluto:</strong> Observe con atención las barras de valor absoluto $|a_n|$ dentro del radical. Su función matemática es crítica: remueven cualquier alternancia de signo en la serie, obligando al criterio a dictaminar sobre la <strong>convergencia absoluta</strong>, previniendo además las raíces complejas indeterminadas cuando $n$ es un número par.
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>4. Leyes de Interpretación del Límite (L)</h2>
+            <p>Una vez calculado y obtenido el valor numérico del límite resultante ($L$), se aplican de forma estricta las tres leyes universales del test de Cauchy:</p>
+            
+            <div class="columns-container">
+                <div class="column-item">
+                    <div class="crit-val c-success">L &lt; 1</div>
+                    <strong>Convergencia Absoluta</strong>
+                    <p style="font-size:0.95rem; margin-top:10px;">La serie es totalmente estable. Su suma infinita converge con precisión a un valor numérico real fijo.</p>
                 </div>
-
-                <div class="exercise-item" id="ex-block-2">
-                    <div class="ex-meta">Ejercicio 02 • Nivel Medio</div>
-                    <h3>∑<sub>(n=1 → ∞)</sub> (3 / n)<sup>n</sup></h3>
-                    <div class="btn-group">
-                        <button class="btn-choice" onclick="verificarEjercicio(2, 'A', 'correcto')">A) Converge absolutamente</button>
-                        <button class="btn-choice" onclick="verificarEjercicio(2, 'B', 'incorrecto')">B) Diverge de forma lineal</button>
-                    </div>
-                    <div id="feedback-2" class="feedback-msg"></div>
+                <div class="column-item">
+                    <div class="crit-val c-danger">L &gt; 1</div>
+                    <strong>Divergencia Absoluta</strong>
+                    <p style="font-size:0.95rem; margin-top:10px;">La serie carece de límite finito. La suma total explota numéricamente hacia el infinito.</p>
                 </div>
-
-                <div class="exercise-item" id="ex-block-3">
-                    <div class="ex-meta">Ejercicio 03 • Nivel Avanzado / Reto</div>
-                    <h3>∑<sub>(n=1 → ∞)</sub> (n / 2n + 1)<sup>3n</sup></h3>
-                    <div class="btn-group">
-                        <button class="btn-choice" onclick="verificarEjercicio(3, 'A', 'correcto')">A) Converge (L = 1/8)</button>
-                        <button class="btn-choice" onclick="verificarEjercicio(3, 'B', 'incorrecto')">B) Diverge (L = 3/2)</button>
-                    </div>
-                    <div id="feedback-3" class="feedback-msg"></div>
+                <div class="column-item">
+                    <div class="crit-val c-muted">L = 1</div>
+                    <strong>Resultado Inconcluyente</strong>
+                    <p style="font-size:0.95rem; margin-top:10px;">La prueba es incapaz de decidir. El estudiante debe descartar el método y utilizar otra vía analítica.</p>
                 </div>
             </div>
         </section>
+
+        <section class="section-block">
+            <h2>5. Módulo Práctico y Ejercicios Propuestos</h2>
+            <p>Componente interactivo diseñado para el autoaprendizaje y refuerzo grupal en el aula. Desarrolle los límites en su cuaderno y valide sus conclusiones analíticas pulsando las opciones:</p>
+
+            <div class="exercise-card">
+                <div class="exercise-tag">Problema 01 • Nivel Introductorio</div>
+                <h4>∑<sub>(n=1 → ∞)</sub> (4n + 1 / 2n + 5)<sup>n</sup></h4>
+                <p>Aplique la propiedad fundamental para anular el exponente y resuelva la razón de polinomios de igual grado al infinito.</p>
+                <div class="editorial-btn-group">
+                    <button class="btn-editorial" onclick="checkEx(1, 'A', false)">A) Converge de forma Absoluta</button>
+                    <button class="btn-editorial" onclick="checkEx(1, 'B', true)">B) Diverge al Infinito</button>
+                </div>
+                <div id="feed-1" class="feedback-editorial"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-tag">Problema 02 • Nivel Intermedio</div>
+                <h4>∑<sub>(n=1 → ∞)</sub> (3 / n)<sup>n</sup></h4>
+                <p>Evalúe con cautela el comportamiento del denominador conforme la variable de control n tiende al infinito absoluto.</p>
+                <div class="editorial-btn-group">
+                    <button class="btn-editorial" onclick="checkEx(2, 'A', true)">A) Converge Absolutamente (L = 0)</button>
+                    <button class="btn-editorial" onclick="checkEx(2, 'B', false)">B) Diverge (L = Infinito)</button>
+                </div>
+                <div id="feed-2" class="feedback-editorial"></div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-tag">Problema 03 • Nivel Avanzado / Reto</div>
+                <h4>∑<sub>(n=1 → ∞)</sub> (n / 2n + 1)<sup>3n</sup></h4>
+                <p>Cuidado con la potencia cúbica remanente posterior a la simplificación de la raíz enésima del término.</p>
+                <div class="editorial-btn-group">
+                    <button class="btn-editorial" onclick="checkEx(3, 'A', true)">A) Converge Absolutamente (L = 1/8)</button>
+                    <button class="btn-editorial" onclick="checkEx(3, 'B', false)">B) Diverge Críticamente (L = 3/2)</button>
+                </div>
+                <div id="feed-3" class="feedback-editorial"></div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer-utp">
-        <p>© 2026 - Universidad Tecnológica de Pereira • Facultad de Ciencias Básicas</p>
+    <footer>
+        Universidad Tecnológica de Pereira • Facultad de Ciencias Básicas • Departamento de Matemáticas • Cálculo Integral (Grupo 29)
     </footer>
 
     <script src="script.js"></script>
