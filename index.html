@@ -34,9 +34,23 @@
         <i class="fa-solid fa-flask"></i>
         <span>Taller</span>
       </button>
+      <button class="tab-btn" data-tab="contenido" role="tab" aria-selected="false">
+        <i class="fa-solid fa-play-circle"></i>
+        <span>Contenido Adicional</span>
+      </button>
     </nav>
-    <div class="navbar__utp">UTP · 2025</div>
+    <div class="navbar__actions">
+      <div class="navbar__utp">UTP · 2025</div>
+      <button class="share-btn" id="shareBtn" title="Compartir página" aria-label="Compartir">
+        <i class="fa-solid fa-share-nodes"></i>
+      </button>
+    </div>
   </header>
+
+  <!-- Toast de "Link copiado" -->
+  <div class="share-toast" id="shareToast">
+    <i class="fa-solid fa-check"></i> Link copiado al portapapeles
+  </div>
 
   <!-- ═══════════════════════════════════════════ MAIN ═══════════ -->
   <main class="main-content">
@@ -418,6 +432,97 @@
         </div>
 
         <div class="feedback" id="feedback-3"></div>
+      </div>
+
+    </section>
+    <!-- ══════════════ SECCIÓN 5: CONTENIDO ADICIONAL ════════════ -->
+    <section id="contenido" class="tab-section" role="tabpanel">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-play-circle"></i> Contenido Adicional</h2>
+        <p class="section-desc">Recursos audiovisuales para reforzar tu comprensión del Criterio de la Raíz</p>
+      </div>
+
+      <div class="contenido__intro">
+        <i class="fa-solid fa-circle-info"></i>
+        <p>
+          Estos videos complementan los conceptos vistos en clase: desde la intuición detrás del Test de Cauchy
+          hasta su aplicación paso a paso en series complejas. Míralos en orden para una comprensión progresiva.
+        </p>
+      </div>
+
+      <div class="videos__grid">
+
+        <!-- Video 1 -->
+        <div class="video-card">
+          <div class="video-card__thumb" data-videoid="LJcQjD2t6Eo">
+            <img src="https://img.youtube.com/vi/LJcQjD2t6Eo/hqdefault.jpg" alt="Video 1" loading="lazy" />
+            <div class="video-card__overlay">
+              <div class="play-btn-big"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <span class="video-card__num">Video 1</span>
+            <p class="video-card__title">Criterio de la Raíz — Introducción</p>
+            <a class="video-card__link" href="https://youtu.be/LJcQjD2t6Eo" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i> Abrir en YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+          <div class="video-card__thumb" data-videoid="81lL5OzM-UE">
+            <img src="https://img.youtube.com/vi/81lL5OzM-UE/hqdefault.jpg" alt="Video 2" loading="lazy" />
+            <div class="video-card__overlay">
+              <div class="play-btn-big"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <span class="video-card__num">Video 2</span>
+            <p class="video-card__title">Ejemplos Paso a Paso</p>
+            <a class="video-card__link" href="https://youtu.be/81lL5OzM-UE" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i> Abrir en YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card">
+          <div class="video-card__thumb" data-videoid="biF62pAG_oA">
+            <img src="https://img.youtube.com/vi/biF62pAG_oA/hqdefault.jpg" alt="Video 3" loading="lazy" />
+            <div class="video-card__overlay">
+              <div class="play-btn-big"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-card__info">
+            <span class="video-card__num">Video 3</span>
+            <p class="video-card__title">Convergencia y Series Avanzadas</p>
+            <a class="video-card__link" href="https://youtu.be/biF62pAG_oA" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i> Abrir en YouTube
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal de video embebido -->
+      <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+        <div class="video-modal__backdrop" id="videoModalBackdrop"></div>
+        <div class="video-modal__box">
+          <button class="video-modal__close" id="videoModalClose" aria-label="Cerrar video">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="video-modal__frame">
+            <iframe
+              id="videoIframe"
+              src=""
+              title="Video de YouTube"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
       </div>
 
     </section>
