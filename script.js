@@ -344,3 +344,118 @@ document.addEventListener('DOMContentLoaded', () => {
   switchTab('inicio');
   updateScoreDisplay();
 });
+
+
+/* ─────────────────────────────────────────────────────────────
+   8. BOTÓN COMPARTIR
+───────────────────────────────────────────────────────────── */
+
+(function initShareBtn() {
+  const btn   = document.getElementById('shareBtn');
+  const toast = document.getElementById('shareToast');
+  if (!btn) return;
+
+  function showToast(msg) {
+    toast.innerHTML = `<i class="fa-solid fa-check"></i> ${msg}`;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2800);
+  }
+
+  btn.addEventListener('click', async () => {
+    const shareData = {
+      title: 'Criterio de la Raíz — UTP Cálculo Integral',
+      text:  'Plataforma educativa sobre el Criterio de la Raíz (Test de Cauchy) para series infinitas.',
+      url:   window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled — no action needed
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        showToast('Link copiado al portapapeles');
+      } catch (_) {
+        showToast('Copia el link desde la barra del navegador');
+      }
+    }
+  });
+})();
+
+
+/* ─────────────────────────────────────────────────────────────
+   9. MODAL DE VIDEO
+───────────────────────────────────────────────────────────── */
+
+(function initVideoModal() {
+  const modal    = document.getElementById('videoModal');
+  const iframe   = document.getElementById('videoIframe');
+  const closeBtn = document.getElementById('videoModalClose');
+  const backdrop = document.getElementById('videoModalBackdrop');
+  if (!modal) return;
+
+  function openVideo(videoId) {
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideo() {
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Attach click on thumbnails
+  document.querySelectorAll('.video-card__thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const videoId = thumb.dataset.videoid;
+      if (videoId) openVideo(videoId);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeVideo);
+  backdrop.addEventListener('click', closeVideo);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeVideo();
+  });
+})();
+
+
+/* ─────────────────────────────────────────────────────────────
+   10. SCROLL REVEAL
+───────────────────────────────────────────────────────────── */
+
+(function initScrollReveal() {
+  // Apply reveal class to target elements
+  const selectors = [
+    '.ley-card',
+    '.ejercicio-card',
+    '.video-card',
+    '.teoria__historia',
+    '.teoria__criterio'
+  ];
+
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${i * 80}ms`;
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
