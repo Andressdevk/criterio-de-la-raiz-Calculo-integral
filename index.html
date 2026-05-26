@@ -1,167 +1,439 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criterio de la Raíz • UTP 29</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criterio de la Raíz — UTP Cálculo Integral</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <header class="hero-tech active-animation">
-        <div class="hero-blur-1 anim-pulse"></div>
-        <div class="hero-blur-2 anim-pulse anim-delay-1s"></div>
-        <div class="hero-content">
-            <div class="utp-tag anim-fade-in anim-delay-0-5s">
-                <i class="fas fa-university"></i> Universidad Tecnológica de Pereira
-            </div>
-            <h1 class="anim-slide-up">Criterio de la Raíz</h1>
-            <p class="hero-subtitle anim-slide-up anim-delay-0-3s">Análisis Avanzado de Series Infinitas</p>
-            
-            <div class="team-dashboard anim-scale-in anim-delay-0-8s">
-                <div class="team-panel">
-                    <span class="panel-label">Cátedra</span>
-                    <span class="panel-val">Cálculo Integral • Grupo 29</span>
-                </div>
-                <div class="team-panel">
-                    <span class="panel-label">Expositores</span>
-                    <span class="panel-val">Jorge Andrés Ceballos Cruz<br>Yohann Andrey Pineda</span>
-                </div>
-            </div>
-            <div class="scroll-btn anim-bounce anim-infinite">Explorar Contenido ↓ <i class="fas fa-chevron-down"></i></div>
+  <!-- ═══════════════════════════════════════════ NAVBAR ═══════ -->
+  <header class="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__icon"><i class="fa-solid fa-infinity"></i></span>
+      <span class="navbar__title">Criterio de la Raíz</span>
+    </div>
+    <nav class="navbar__tabs" role="tablist">
+      <button class="tab-btn active" data-tab="inicio" role="tab" aria-selected="true">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+      </button>
+      <button class="tab-btn" data-tab="teoria" role="tab" aria-selected="false">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Teoría</span>
+      </button>
+      <button class="tab-btn" data-tab="leyes" role="tab" aria-selected="false">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <span>Leyes</span>
+      </button>
+      <button class="tab-btn" data-tab="taller" role="tab" aria-selected="false">
+        <i class="fa-solid fa-flask"></i>
+        <span>Taller</span>
+      </button>
+    </nav>
+    <div class="navbar__utp">UTP · 2025</div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ MAIN ═══════════ -->
+  <main class="main-content">
+
+    <!-- ══════════════ SECCIÓN 1: INICIO ══════════════════════════ -->
+    <section id="inicio" class="tab-section active" role="tabpanel">
+      <div class="hero">
+
+        <div class="hero__badge">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Universidad Tecnológica de Pereira &nbsp;·&nbsp; Cálculo Integral
         </div>
-    </header>
 
-    <main class="main-layout">
+        <h1 class="hero__title">
+          Criterio<br/>
+          <em>de la Raíz</em>
+        </h1>
+        <p class="hero__subtitle">
+          Plataforma Educativa para el Análisis Dinámico de Series Infinitas
+        </p>
 
-        <section class="tech-card history-theme anim-reveal">
-            <div class="card-glow"></div>
-            <div class="card-body-layout">
-                <div class="text-side">
-                    <div class="section-tag"><i class="fas fa-history"></i> 01 / HISTORIA</div>
-                    <h2>Augustin Louis Cauchy</h2>
-                    <p>El rigor matemático moderno le debe su existencia al francés <strong>Augustin Louis Cauchy</strong> (1789–1857). En una época donde el cálculo se usaba por pura intuición, Cauchy llegó a poner orden.</p>
-                    <p>En su célebre obra <i>Cours d'Analyse</i> (1821), estructuró formalmente el concepto de límite y diseñó la <strong>Prueba de la Raíz</strong>. Su meta era simple pero brillante: crear un método definitivo capaz de destruir y simplificar potencias variables complejas que ningún otro criterio de la época podía solucionar.</p>
-                </div>
-                <div class="img-side anim-tilt">
-                    <div class="frame-cyber">
-                        <img src="Louis.jpg" alt="Augustin Louis Cauchy">
-                    </div>
-                    <span class="frame-caption">Augustin Louis Cauchy</span>
-                </div>
+        <div class="hero__cards">
+          <!-- Card Expositores -->
+          <div class="info-card">
+            <div class="info-card__icon-wrap">
+              <i class="fa-solid fa-users"></i>
             </div>
-        </section>
+            <p class="info-card__label">Expositores</p>
+            <p class="info-card__name">Jorge Andrés Ceballos Cruz</p>
+            <div class="info-card__divider"></div>
+            <p class="info-card__name">Yohann Andrey Pineda</p>
+          </div>
 
-        <section class="tech-card foundational-theme anim-reveal">
-            <div class="section-tag"><i class="fas fa-book-open"></i> 02 / FUNDAMENTOS</div>
-            <h2>Conceptos Preliminares</h2>
-            <p class="intro-p">Para dominar el criterio, primero hay que tener claros los pilares del tablero:</p>
-            
-            <div class="concepts-grid">
-                <div class="concept-mini-card anim-hover-float">
-                    <h3><i class="fas fa-list-ol"></i> Sucesión vs Serie</h3>
-                    <p>Una <strong>sucesión</strong> es una lista ordenada de números. Una <strong>serie</strong> es la acción de sumar todos los elementos de esa lista.</p>
-                </div>
-                <div class="concept-mini-card anim-hover-float anim-delay-0-1s">
-                    <h3><i class="fas fa-infinity"></i> Serie Infinita</h3>
-                    <p>Es una suma que se prolonga eternamente hacia el infinito:</p>
-                    <div class="code-math">∑ a<sub>n</sub> = a<sub>1</sub> + a<sub>2</sub> + a<sub>3</sub> + ...</div>
-                </div>
-                <div class="concept-mini-card anim-hover-float anim-delay-0-2s">
-                    <h3><i class="fas fa-magnet"></i> Convergencia</h3>
-                    <p>Si al sumar infinitos términos el resultado se estabiliza y se acerca a un número fijo y real, la serie <strong>converge</strong>.</p>
-                </div>
-                <div class="concept-mini-card anim-hover-float anim-delay-0-3s">
-                    <h3><i class="fas fa-bomb"></i> Divergencia</h3>
-                    <p>Si la suma acumulada crece descontroladamente hacia el infinito ($\infty$) o no se decide por un valor, la serie <strong>diverge</strong>.</p>
-                </div>
+          <!-- Card Curso -->
+          <div class="info-card">
+            <div class="info-card__icon-wrap info-card__icon-wrap--purple">
+              <i class="fa-solid fa-university"></i>
             </div>
-        </section>
+            <p class="info-card__label">Curso</p>
+            <p class="info-card__name">Cálculo Integral</p>
+            <div class="info-card__divider"></div>
+            <p class="info-card__name">Grupo <strong>29</strong></p>
+          </div>
+        </div>
 
-        <section class="tech-card formula-theme anim-reveal">
-            <div class="section-tag"><i class="fas fa-brain"></i> 03 / EL TEOREMA</div>
-            <h2>El Criterio de la Raíz</h2>
-            <p>Este criterio es el arma ideal cuando el término general de la serie ($a_n$) está totalmente elevado a un exponente variable $n$. Para ejecutarlo, aplicamos el siguiente límite fundamental al infinito:</p>
-            
-            <div class="img-formula-container anim-glow-cyan">
-                <img src="formula.png" alt="Fórmula formal del criterio">
+        <div class="hero__topic-pill">
+          <i class="fa-solid fa-atom"></i>
+          Test de Cauchy &nbsp;·&nbsp; Series Infinitas &nbsp;·&nbsp; Convergencia &amp; Divergencia
+        </div>
+
+        <button class="btn-primary" onclick="switchTab('teoria')">
+          <i class="fa-solid fa-play"></i>
+          Comenzar Análisis
+        </button>
+
+      </div>
+
+      <!-- Decorative math background -->
+      <div class="math-bg" aria-hidden="true">
+        <span>∑</span><span>lim</span><span>√</span><span>n→∞</span><span>L</span>
+        <span>∞</span><span>∫</span><span>∏</span><span>≤</span><span>≥</span>
+      </div>
+    </section>
+
+    <!-- ══════════════ SECCIÓN 2: TEORÍA ══════════════════════════ -->
+    <section id="teoria" class="tab-section" role="tabpanel">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Teoría e Historia Express</h2>
+        <p class="section-desc">El origen del criterio y el teorema central que lo define</p>
+      </div>
+
+      <div class="teoria__split">
+
+        <!-- ── Izquierda: Historia ── -->
+        <div class="teoria__historia">
+          <div class="historia__tag"><i class="fa-solid fa-clock-rotate-left"></i> Historia</div>
+
+          <div class="historia__avatar">
+            <div class="avatar-circle">
+              <i class="fa-solid fa-user-tie"></i>
             </div>
-
-            <div class="tech-alert anim-fade-in">
-                <span class="alert-icon anim-shake anim-infinite">⚠️</span>
-                <div class="alert-text">
-                    <strong>Rigor del Valor Absoluto:</strong> Las barras de $|a_n|$ limpian los signos negativos. Esto nos protege de raíces pares indeterminadas y obliga al criterio a evaluar la <strong>convergencia absoluta</strong>.
-                </div>
+            <div class="avatar-label">
+              <strong>Augustin-Louis Cauchy</strong>
+              <span>1789 – 1857</span>
             </div>
-        </section>
+          </div>
 
-        <section class="tech-card rules-theme anim-reveal">
-            <div class="section-tag"><i class="fas fa-chart-line"></i> 04 / INTERPRETACIÓN</div>
-            <h2>Leyes de Decisión (El valor L)</h2>
-            <p>Una vez resuelves el límite y obtienes el número <b>L</b>, dictaminas el destino de la serie mediante estas tres reglas fijas:</p>
-            
-            <div class="rules-flex">
-                <div class="rule-box status-green anim-hover-scale anim-delay-0-1s">
-                    <div class="r-badge">L &lt; 1</div>
-                    <h4>CONVERGE</h4>
-                    <p>La serie es estable y acumula un valor real finito.</p>
-                </div>
-                <div class="rule-box status-red anim-hover-scale anim-delay-0-2s">
-                    <div class="r-badge">L &gt; 1</div>
-                    <h4>DIVERGE</h4>
-                    <p>La serie explota sin control rumbo al infinito.</p>
-                </div>
-                <div class="rule-box status-gray anim-hover-scale anim-delay-0-3s">
-                    <div class="r-badge">L = 1</div>
-                    <h4>INCONCLUYENTE</h4>
-                    <p>El test falla. Borra el tablero y usa otro método.</p>
-                </div>
+          <h3 class="historia__name">Augustin-Louis Cauchy</h3>
+          <p class="historia__year">París, Francia · <strong>1821</strong></p>
+
+          <p class="historia__text">
+            El matemático francés Cauchy introdujo este criterio en su obra
+            <em>"Cours d'analyse"</em> (1821) como una herramienta directa y elegante
+            para tratar series cuyos términos generales contienen <strong>potencias variables</strong>
+            de la forma <code>aₙ = f(n)ⁿ</code>, situación donde el Criterio de la Razón
+            puede volverse engorroso o inconcluso.
+          </p>
+          <p class="historia__text">
+            Su enfoque: extraer la raíz enésima del valor absoluto del término general
+            elimina de manera natural el exponente variable, reduciendo el análisis a
+            estudiar el comportamiento de una sucesión mucho más simple.
+          </p>
+
+          <div class="historia__fact">
+            <i class="fa-solid fa-lightbulb"></i>
+            Cauchy fue uno de los primeros en formalizar el concepto de <em>límite</em>
+            con rigor analítico moderno, sentando las bases del Cálculo contemporáneo.
+          </div>
+        </div>
+
+        <!-- ── Derecha: El Criterio ── -->
+        <div class="teoria__criterio">
+          <div class="criterio__tag"><i class="fa-solid fa-square-root-variable"></i> El Criterio</div>
+
+          <h3 class="criterio__title">Test de Cauchy — Criterio de la Raíz</h3>
+          <p class="criterio__intro">
+            Sea <code>∑ aₙ</code> una serie de términos reales o complejos.
+            Se define el límite:
+          </p>
+
+          <div class="formula-box">
+            <div class="formula-box__inner">
+              <div class="formula-main">
+                L = lim<sub>n→∞</sub> &nbsp;
+                <span class="formula-root">
+                  ⁿ<span class="radical-sign">√</span><span class="radical-content">|aₙ|</span>
+                </span>
+              </div>
+              <p class="formula-equiv">equivalentemente:</p>
+              <div class="formula-main formula-main--small">
+                L = lim<sub>n→∞</sub> |aₙ|<sup>1/n</sup>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <section class="tech-card workshop-theme anim-reveal">
-            <div class="section-tag"><i class="fas fa-check-double"></i> 05 / DINÁMICA</div>
-            <h2>Módulo Práctico de Evaluación</h2>
-            <p class="intro-p">Resuelve los ejercicios planteados en la exposición y verifica tus algoritmos en tiempo real aquí:</p>
+          <p class="criterio__text">
+            Si este límite <strong>L existe</strong> (finito o infinito), podemos
+            determinar el comportamiento de la serie completa de forma directa
+            usando las <strong>Leyes de Decisión</strong>.
+          </p>
 
-            <div class="quiz-item anim-fade-in anim-delay-0-1s">
-                <div class="quiz-meta">Problema 01 • Introductorio</div>
-                <h3>∑<sub>(n=1 → ∞)</sub> (4n + 1 / 2n + 5)<sup>n</sup></h3>
-                <div class="quiz-buttons">
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(1, 'A', false)">A) Converge Absolutamente</button>
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(1, 'B', true)">B) Diverge al Infinito</button>
-                </div>
-                <div id="ans-1" class="quiz-feedback anim-pop-in"></div>
+          <!-- Nota de valor absoluto -->
+          <div class="alert-box alert-box--blue">
+            <div class="alert-box__header">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <strong>Nota Crucial: El Valor Absoluto</strong>
             </div>
+            <p>
+              El uso de <code>|aₙ|</code> es <strong>indispensable</strong> dentro del
+              criterio. Al aplicar el valor absoluto eliminamos los signos negativos o
+              alternantes del término general, garantizando que la raíz enésima esté
+              siempre bien definida en los reales y que evaluemos <em>convergencia absoluta</em>.
+              Una serie absolutamente convergente es también convergente, pero no viceversa.
+            </p>
+          </div>
 
-            <div class="quiz-item anim-fade-in anim-delay-0-2s">
-                <div class="quiz-meta">Problema 02 • Intermedio</div>
-                <h3>∑<sub>(n=1 → ∞)</sub> (3 / n)<sup>n</sup></h3>
-                <div class="quiz-buttons">
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(2, 'A', true)">A) Converge Absolutamente (L = 0)</button>
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(2, 'B', false)">B) Diverge Críticamente</button>
-                </div>
-                <div id="ans-2" class="quiz-feedback anim-pop-in"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SECCIÓN 3: LEYES ═══════════════════════════ -->
+    <section id="leyes" class="tab-section" role="tabpanel">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-scale-balanced"></i> Leyes de Decisión</h2>
+        <p class="section-desc">Tres casos posibles según el valor de L que determinan el destino de la serie</p>
+      </div>
+
+      <div class="leyes__grid">
+
+        <!-- Ley 1: Convergente -->
+        <div class="ley-card ley-card--green">
+          <div class="ley-card__icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="ley-card__condition">
+            <span class="ley-badge ley-badge--green">Caso I</span>
+            <div class="ley-formula">L &lt; 1</div>
+          </div>
+          <h3 class="ley-card__title">Serie Convergente</h3>
+          <p class="ley-card__sub">Absolutamente</p>
+          <p class="ley-card__desc">
+            Cuando L es estrictamente menor que 1, los términos de la serie
+            decaen geométricamente. La serie <strong>converge de forma absoluta</strong>,
+            lo que implica que también converge en el sentido ordinario.
+          </p>
+          <div class="ley-card__example">
+            <i class="fa-solid fa-flask"></i>
+            Ejemplo: L = 0 &nbsp;→&nbsp; <code>(3/n)ⁿ</code>
+          </div>
+        </div>
+
+        <!-- Ley 2: Divergente -->
+        <div class="ley-card ley-card--red">
+          <div class="ley-card__icon">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="ley-card__condition">
+            <span class="ley-badge ley-badge--red">Caso II</span>
+            <div class="ley-formula">L &gt; 1 &nbsp;ó&nbsp; L = ∞</div>
+          </div>
+          <h3 class="ley-card__title">Serie Divergente</h3>
+          <p class="ley-card__sub">Término general no tiende a 0</p>
+          <p class="ley-card__desc">
+            Cuando L supera la unidad o es infinito, los términos generales
+            no se aproximan a cero. Por la <strong>condición necesaria de convergencia</strong>
+            (aₙ → 0), la serie debe divergir.
+          </p>
+          <div class="ley-card__example">
+            <i class="fa-solid fa-flask"></i>
+            Ejemplo: L = 2 &nbsp;→&nbsp; <code>((4n+1)/(2n+5))ⁿ</code>
+          </div>
+        </div>
+
+        <!-- Ley 3: Inconcluyente -->
+        <div class="ley-card ley-card--gray">
+          <div class="ley-card__icon">
+            <i class="fa-solid fa-circle-question"></i>
+          </div>
+          <div class="ley-card__condition">
+            <span class="ley-badge ley-badge--gray">Caso III</span>
+            <div class="ley-formula">L = 1</div>
+          </div>
+          <h3 class="ley-card__title">Criterio Inconcluyente</h3>
+          <p class="ley-card__sub">Zona gris — se requiere otro test</p>
+          <p class="ley-card__desc">
+            El valor L = 1 es el <strong>punto crítico</strong>: la serie puede
+            converger o diverger. El criterio de la raíz no otorga información
+            suficiente; se debe recurrir a otros criterios (Integral, Comparación, etc.).
+          </p>
+          <div class="ley-card__example">
+            <i class="fa-solid fa-flask"></i>
+            Clásico: serie armónica <code>∑ 1/n</code> &nbsp;→&nbsp; L = 1, diverge
+          </div>
+        </div>
+
+      </div>
+
+      <div class="leyes__summary">
+        <div class="summary-row">
+          <span class="summary-l">L &lt; 1</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-result summary-result--green"><i class="fa-solid fa-check"></i> Converge Absolutamente</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-l">L &gt; 1 &nbsp;ó&nbsp; ∞</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-result summary-result--red"><i class="fa-solid fa-xmark"></i> Diverge</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-l">L = 1</span>
+          <span class="summary-arrow">→</span>
+          <span class="summary-result summary-result--gray"><i class="fa-solid fa-question"></i> Inconcluyente</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SECCIÓN 4: TALLER ══════════════════════════ -->
+    <section id="taller" class="tab-section" role="tabpanel">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-flask"></i> Taller Práctico Interactivo</h2>
+        <p class="section-desc">Resuelve los ejercicios trabajados en clase y valida tu comprensión del criterio</p>
+      </div>
+
+      <div class="taller__score-bar">
+        <span><i class="fa-solid fa-star"></i> Puntuación: <strong id="score-display">0 / 3</strong></span>
+        <button class="btn-reset" onclick="resetTaller()">
+          <i class="fa-solid fa-rotate-right"></i> Reiniciar Taller
+        </button>
+      </div>
+
+      <!-- ── Ejercicio 1 ── -->
+      <div class="ejercicio-card" id="ej1">
+        <div class="ejercicio-card__header">
+          <span class="ej-number">Ejercicio 1</span>
+          <span class="ej-tag">Tablero de Clase</span>
+        </div>
+        <p class="ejercicio-card__prompt">
+          Determine la convergencia o divergencia de la serie usando el Criterio de la Raíz:
+        </p>
+        <div class="ejercicio-card__formula">
+          <span class="sigma-big">∑</span>
+          <div>
+            <div class="big-frac">
+              <div class="frac-top">4n + 1</div>
+              <div class="frac-line"></div>
+              <div class="frac-bot">2n + 5</div>
             </div>
+            <sup class="exp-n">n</sup>
+          </div>
+        </div>
 
-            <div class="quiz-item anim-fade-in anim-delay-0-3s">
-                <div class="quiz-meta">Problema 03 • Reto Avanzado</div>
-                <h3>∑<sub>(n=1 → ∞)</sub> (n / 2n + 1)<sup>3n</sup></h3>
-                <div class="quiz-buttons">
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(3, 'A', true)">A) Converge Absolutamente (L = 1/8)</button>
-                    <button class="btn-tech anim-press" onclick="evaluateQuiz(3, 'B', false)">B) Diverge de forma Lineal</button>
-                </div>
-                <div id="ans-3" class="quiz-feedback anim-pop-in"></div>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkQuiz(1, 'A')">
+            <span class="quiz-btn__letter">A</span>
+            <span>Converge &nbsp;·&nbsp; L = 1/2</span>
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(1, 'B')">
+            <span class="quiz-btn__letter">B</span>
+            <span>Diverge &nbsp;·&nbsp; L = 2</span>
+          </button>
+        </div>
+
+        <div class="feedback" id="feedback-1"></div>
+      </div>
+
+      <!-- ── Ejercicio 2 ── -->
+      <div class="ejercicio-card" id="ej2">
+        <div class="ejercicio-card__header">
+          <span class="ej-number">Ejercicio 2</span>
+          <span class="ej-tag">Tablero de Clase</span>
+        </div>
+        <p class="ejercicio-card__prompt">
+          Determine la convergencia o divergencia de la serie usando el Criterio de la Raíz:
+        </p>
+        <div class="ejercicio-card__formula">
+          <span class="sigma-big">∑</span>
+          <div>
+            <div class="big-frac-paren">
+              <span class="paren">(</span>
+              <div class="big-frac">
+                <div class="frac-top">3</div>
+                <div class="frac-line"></div>
+                <div class="frac-bot">n</div>
+              </div>
+              <span class="paren">)</span>
             </div>
-        </section>
+            <sup class="exp-n">n</sup>
+          </div>
+        </div>
 
-    </main>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkQuiz(2, 'A')">
+            <span class="quiz-btn__letter">A</span>
+            <span>Diverge &nbsp;·&nbsp; L = 3</span>
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(2, 'B')">
+            <span class="quiz-btn__letter">B</span>
+            <span>Converge &nbsp;·&nbsp; L = 0</span>
+          </button>
+        </div>
 
-    <footer class="tech-footer anim-fade-in">
-        © 2026 Universidad Tecnológica de Pereira • Facultad de Ciencias Básicas • Cálculo Integral (Grupo 29)
-    </footer>
+        <div class="feedback" id="feedback-2"></div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- ── Ejercicio 3 ── -->
+      <div class="ejercicio-card" id="ej3">
+        <div class="ejercicio-card__header">
+          <span class="ej-number">Ejercicio 3</span>
+          <span class="ej-tag">Tablero de Clase</span>
+        </div>
+        <p class="ejercicio-card__prompt">
+          Determine la convergencia o divergencia de la serie usando el Criterio de la Raíz:
+        </p>
+        <div class="ejercicio-card__formula">
+          <span class="sigma-big">∑</span>
+          <div>
+            <div class="big-frac-paren">
+              <span class="paren">(</span>
+              <div class="big-frac">
+                <div class="frac-top">n</div>
+                <div class="frac-line"></div>
+                <div class="frac-bot">2n + 1</div>
+              </div>
+              <span class="paren">)</span>
+            </div>
+            <sup class="exp-n">3n</sup>
+          </div>
+        </div>
+
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkQuiz(3, 'A')">
+            <span class="quiz-btn__letter">A</span>
+            <span>Converge &nbsp;·&nbsp; L = 1/8</span>
+          </button>
+          <button class="quiz-btn" onclick="checkQuiz(3, 'B')">
+            <span class="quiz-btn__letter">B</span>
+            <span>Diverge &nbsp;·&nbsp; L = 1</span>
+          </button>
+        </div>
+
+        <div class="feedback" id="feedback-3"></div>
+      </div>
+
+    </section>
+    <!-- ════ Fin secciones ════ -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>
+      <i class="fa-solid fa-infinity"></i>
+      Criterio de la Raíz · UTP · Cálculo Integral · Grupo 29
+    </span>
+    <span>Ceballos &amp; Pineda · 2025</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
